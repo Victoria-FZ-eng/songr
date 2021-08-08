@@ -1,6 +1,6 @@
 # songr
 
-This is a Web site that views songs Albums with some details.
+This is a Website that views songs' Albums with some details.
 
 To go to the home page use -> "/" in the URL
 

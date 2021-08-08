@@ -17,7 +17,7 @@ public class HelloController {
     @GetMapping("/hello")
     @ResponseBody
     public String hello(){
-        return "Hello!";
+        return "Hello From Lab 11!";
     }
 
     @GetMapping("/capitalize") // http://localhost:8080/capitalize?word=this is Kinda Capitalized
