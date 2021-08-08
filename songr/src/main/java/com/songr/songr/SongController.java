@@ -9,6 +9,11 @@ import java.util.*;
 @Controller
 public class SongController {
 
+    @GetMapping("/")
+    public String home(Model model){
+        return "home.html";
+    }
+
     @GetMapping("/albums")
     public String getAlbums(Model model){
         List<Album> albums = new ArrayList<Album>();

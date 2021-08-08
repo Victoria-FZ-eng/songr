@@ -1,0 +1,22 @@
+*{
+ box-sizing: border-box;
+ background-color: #FDEFEF;
+
+}
+h1{
+text-align: center;
+margin: 2rem;
+padding: 1 rem;
+}
+ul,li{
+margin: 2rem;
+padding: 1 rem;
+}
+footer{
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
