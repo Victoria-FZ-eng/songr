@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Albums</h1>
+<ul>
+    <li th:each="album : ${albums}">
+        <h3>Title: <span th:text="${album.title}"></span></h3>
+        <p>Artist: <span th:text="${album.artist}"></span></p>
+        <p>Count: <span th:text="${album.songCount}"></span></p>
+        <p>Length: <span th:text="${album.length}"></span> </p>
+        <p>Image URL: <span th:text="${album.imageUrl}"></span> </p>
+    </li>
+</ul>
+</body>
+
+<footer>&copy; Victoria Fares 2021 </footer>
+</html>
