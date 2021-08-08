@@ -2,16 +2,16 @@ package com.songr.songr;
 
 import java.util.Locale;
 
-public class Capitaize {
+public class Capitalize {
 
     private String word;
 
-    public Capitaize(String  word) {
+    public Capitalize(String  word) {
         this.word = word;
     }
 
     public String  getWord() {
-        return word.toUpperCase(Locale.ROOT);
+        return word.toUpperCase();
     }
 
 
