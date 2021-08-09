@@ -19,4 +19,14 @@ position: fixed;
   width: 100%;
   text-align: center;
 }
+form{
+width: 50%;
+border-radius: 4px;
+margin-left:3rem;
+}
+img{
+ border-radius: 8px;
+ width: 30rem;
+ height: 24rem;
+}
 
