@@ -48,13 +48,6 @@ public class SongController {
         albumRepository.save(album);
         return new  RedirectView("/albums");
 
-//        public RedirectView addAlbum(Model m,
-//                @RequestParam(value="title") String title,
-//                {
-//       .....
-//        Add new album
-//        return new RedirectView("/albums");
-//    }
     }
 
 }
