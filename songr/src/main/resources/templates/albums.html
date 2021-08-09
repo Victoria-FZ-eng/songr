@@ -13,7 +13,7 @@
         <p>Artist: <span th:text="${album.artist}"></span></p>
         <p>Count: <span th:text="${album.songCount}"></span></p>
         <p>Length: <span th:text="${album.length}"></span> </p>
-        <p>Image URL: <span th:text="${album.imageUrl}"></span> </p>
+        <img th:src="${album.imageUrl}"/>
     </li>
 </ul>
 </body>
