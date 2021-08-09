@@ -1,13 +1,20 @@
 package com.songr.songr;
-//import javax.persistence.*;
+import javax.persistence.*;
 
-//@Entity
+@Entity
 public class Album {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String title;
     private String artist;
     private String songCount;
     private String length;
     private String  imageUrl;
+
+    public Album(){
+
+    }
 
     public Album(String title, String artist, String songCount, String length, String imageUrl) {
         this.title = title;
