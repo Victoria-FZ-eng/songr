@@ -4,19 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.*;
 
 @Controller
 public class SongController {
 
+    @Autowired
+    AlbumRepository albumRepository;
+
     @GetMapping("/")
     public String home(Model model){
         return "home.html";
     }
-
-    @Autowired
-    AlbumRepository albumRepository;
 
     @GetMapping("/albums")
     public String getAlbums(Model model){
@@ -35,6 +39,22 @@ public class SongController {
         // lab 12
         model.addAttribute("albums", albumRepository.findAll());
         return "albums.html";
+    }
+
+    @RequestMapping("/addAlbum")
+    @PostMapping("/addAlbum")
+    public RedirectView addAlbum(String title, String artist, String count, String sec, String cover){
+        Album album = new Album(title,artist,count,sec,cover);
+        albumRepository.save(album);
+        return new  RedirectView("/albums");
+
+//        public RedirectView addAlbum(Model m,
+//                @RequestParam(value="title") String title,
+//                {
+//       .....
+//        Add new album
+//        return new RedirectView("/albums");
+//    }
     }
 
 }
