@@ -1,6 +1,7 @@
 package com.songr.songr;
+//import javax.persistence.*;
 
-
+//@Entity
 public class Album {
     private String title;
     private String artist;
