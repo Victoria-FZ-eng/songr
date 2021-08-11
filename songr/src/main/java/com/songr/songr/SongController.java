@@ -17,6 +17,9 @@ public class SongController {
     @Autowired
     AlbumRepository albumRepository;
 
+    @Autowired
+    SongrApplication songRepository;
+
     @GetMapping("/")
     public String home(Model model){
         return "home.html";
@@ -49,5 +52,14 @@ public class SongController {
         return new  RedirectView("/albums");
 
     }
+
+    @GetMapping("/songs")
+    public String getAllSongs(Model model){
+       // Song one = new Song(albumRepository,5.2,3,"album");
+      //  songRepository.add(one);
+       // model.addAttribute("songs", songRepository.findAll());
+        return "songs";
+    }
+
 
 }
