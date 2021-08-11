@@ -17,6 +17,9 @@ public class SongController {
     @Autowired
     AlbumRepository albumRepository;
 
+    @Autowired
+    SongrApplication songRepository;
+
     @GetMapping("/")
     public String home(Model model){
         return "home.html";
@@ -49,5 +52,6 @@ public class SongController {
         return new  RedirectView("/albums");
 
     }
+
 
 }

@@ -1,5 +1,6 @@
 package com.songr.songr;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -12,6 +13,9 @@ public class Album {
     private String songCount;
     private String length;
     private String  imageUrl;
+
+    @OneToMany(mappedBy = "title")
+    private List<Song> songs;
 
     public Album(){
 
