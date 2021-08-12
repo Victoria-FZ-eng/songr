@@ -9,7 +9,7 @@
 <h1>Songs</h1>
 
 <div>
-<ul th:each="song : ${songs}">
+<ul th:each="song : ${songs}" id="songCss">
     <li>Name Of Song: <span th:text="${song.title}"></span></li>
     <li>Number: <span th:text="${song.trackNumber}"></span></li>
     <li>Length: <span th:text="${song.length}"></span> </li>
@@ -29,6 +29,7 @@
 <!--        <input type="submit" value="Add" >-->
 <!--    </fieldset>-->
 <!--</form>-->
+<button type="button" th:onclick="|window.location.href='/albums'|">Albums</button>
 
 <footer>&copy; Victoria Fares 2021 </footer>
 </body>
