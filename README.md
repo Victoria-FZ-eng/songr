@@ -14,8 +14,10 @@ This is a Website that views songs' Albums with some details.
 
 
 6. $ pgstart then $ /c <dbName> => you are now connected to your database.
+7. $ \dt =>to view data tables or schemas
+8. select * from schemaName; => to view data and relationships
 
-7. go to application.properties file => copy and paste this
+### application.properties file => copy and paste this
 
   ```
   spring.jpa.database=POSTGRESQL
@@ -34,5 +36,7 @@ To go to the capitalize page use -> "/capitalize?word=<type anything, it'll be c
 
 To go to the album page use -> "/albums" in the URL
 
-You can add new albums by filling and submitting the form
+You can add new albums by filling and submitting the form, You can view the album, see what songs it contains and add songs .
+
+You can view all the songs for all albums by clicking on All Songs button
 
