@@ -6,15 +6,26 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Songs</h1>
 
+<div th:object="${album}" id="album">
+    <h1>Title: <span th:text="${album.title}"></span></h1>
+    <h2>Artist: <span th:text="${album.artist}"></span></h2>
+    <p>Count: <span th:text="${album.songCount}"></span></p>
+    <p>Length: <span th:text="${album.length}"></span> </p>
+    <img th:src="${album.imageUrl}"/><br>
+
+   </div>
 <!--<ul>-->
-<!--    <li th:each="song : ${songs}">-->
-<!--        <h3>Title: <span th:text="${song.title}"></span></h3>-->
-<!--        <p>Length: <span th:number="${album.length}"></span></p>-->
-<!--        <p>Number: <span th:number="${album.trackNumber}"></span></p>-->
-<!--        <p>From: <span th:text="${album.album}"></span> album </p>-->
-<!--                <button type="button" th:onclick="|window.location.href='/albums'|">Back to Albums</button>-->
+<!--    <li th:${{albums}}>-->
+<!--        <h3>Title: <span th:text="${album.title}"></span></h3>-->
+<!--        <p>Artist: <span th:text="${album.artist}"></span></p>-->
+<!--        <p>Count: <span th:number="${album.songCount}"></span></p>-->
+<!--        <p>Length: <span th:number="${album.length}"></span> </p>-->
+<!--        <img th:src="${album.imageUrl}"/><br>-->
+
+<!--        <form action="/albums">-->
+<!--            <input type="submit" value="All Albums">-->
+<!--        </form>-->
 <!--    </li>-->
 <!--</ul>-->
 

@@ -59,12 +59,13 @@ public class SongController {
         return "songs.html";
     }
 
-    @RequestMapping("/songs/{album.id}")
-    @GetMapping("/songs/{album.id}")
+    @RequestMapping("/oneAlbum/id")
+    @GetMapping("/oneAlbum/id")
     public String getSongsAlbumSpecified(@RequestParam(value = "id")Integer id, Model model){
 
-        model.addAttribute("songs", albumRepository.findById(id));
-        return "songs.html";
+        //Integer i = Integer.parseInt(id);
+        model.addAttribute("album", albumRepository.findById(id).get());
+        return "albumDetails.html";
     }
 
     @RequestMapping("/addSong")

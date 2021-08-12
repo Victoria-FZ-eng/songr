@@ -16,9 +16,9 @@
         <label for="artist">Artist:</label>
         <input type="text" id="artist" name="artist"><br><br>
         <label for="count">Song Count:</label>
-        <input type="text" id="count" name="count"><br><br>
+        <input type="number" id="count" name="count"><br><br>
         <label for="sec">Length:</label>
-        <input type="text" id="sec" name="sec"><br><br>
+        <input type="number" id="sec" name="sec"><br><br>
         <label for="cover">Album's Photo URL:</label>
         <input type="text" id="cover" name="cover"><br><br>
         <input type="submit" value="Add">
@@ -32,12 +32,20 @@
         <p>Count: <span th:text="${album.songCount}"></span></p>
         <p>Length: <span th:text="${album.length}"></span> </p>
         <img th:src="${album.imageUrl}"/><br>
-        <button type="button" th:onclick="|window.location.href='/songs/{album.id}'|">View Album</button>
+<!--        <button name="albumBut" type="button" th:onclick="|window.location.href='/songs/id'|" value="${album.id}">View Album</button>-->
+        <form action="/oneAlbum/id">
+            <input type="hidden" name="id" th:value=${album.id} />
+                <input type="submit" value="View Album">
+        </form>
     </li>
 </ul>
 <button type="button" th:onclick="|window.location.href='/songs'|">All Songs</button>
 
-</body>
 
 <footer>&copy; Victoria Fares 2021 </footer>
+</body>
+
+
+
+
 </html>
