@@ -70,11 +70,15 @@ public class SongController {
 
     @RequestMapping("/addSong")
     @PostMapping("/addSong")
-    public RedirectView addSong(String title, int count, double sec, String albumx){
-        Album album = (Album) albumRepository.findByTitle(albumx);
+    public RedirectView addSong(String title, int count, double sec, Integer id){
+        System.out.println(title);
+        System.out.println(count);
+        System.out.println(sec);
+        System.out.println(id);
+        Album album =  albumRepository.findById(id).get();
         Song song = new Song(title,sec,count, album);
         songRepository.save(song);
-        return new  RedirectView("/songs");
+        return new  RedirectView("/oneAlbum/id?id="+album.getId());
 
     }
 

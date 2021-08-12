@@ -15,21 +15,8 @@
     <img th:src="${album.imageUrl}"/><br>
 
    </div>
-<!--<ul>-->
-<!--    <li th:${{albums}}>-->
-<!--        <h3>Title: <span th:text="${album.title}"></span></h3>-->
-<!--        <p>Artist: <span th:text="${album.artist}"></span></p>-->
-<!--        <p>Count: <span th:number="${album.songCount}"></span></p>-->
-<!--        <p>Length: <span th:number="${album.length}"></span> </p>-->
-<!--        <img th:src="${album.imageUrl}"/><br>-->
 
-<!--        <form action="/albums">-->
-<!--            <input type="submit" value="All Albums">-->
-<!--        </form>-->
-<!--    </li>-->
-<!--</ul>-->
-
-<form action="/addSong">
+<form action="/addSong" th:object="${album}" value=album.id>
     <fieldset>
         <legend>Add Song</legend>
         <label for="title">Title:</label>
@@ -38,9 +25,9 @@
         <input type="text" id="count" name="count"><br><br>
         <label for="sec">Length:</label>
         <input type="text" id="sec" name="sec"><br><br>
-        <label for="albumx">Add to album:</label>
-        <input type="text" id="albumx" name="albumx"><br><br>
-        <input type="submit" value="Add" >
+<!--      <input type="hidden" name="id" th:value=${album.id} />-->
+<!--       <input type="submit" value="Add"  id="id" name="id">-->
+        <button type="submit" value=album.id  >Add</button>
     </fieldset>
 </form>
 
