@@ -23,10 +23,24 @@ form{
 width: 50%;
 border-radius: 4px;
 margin-left:3rem;
+padding:1rem;
 }
 img{
  border-radius: 8px;
  width: 30rem;
  height: 24rem;
+}
+
+#album{
+text-align: center;
+}
+
+button{
+padding:1rem;
+margin:1rem;
+}
+#songCss{
+padding:2rem;
+margin:2rem;
 }
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div th:object="${album}" id="album">
+    <h1>Title: <span th:text="${album.title}"></span></h1>
+    <h2>Artist: <span th:text="${album.artist}"></span></h2>
+    <p>Count: <span th:text="${album.songCount}"></span></p>
+    <p>Length: <span th:text="${album.length}"></span> </p>
+    <img th:src="${album.imageUrl}"/><br>
+
+   </div>
+
+<ul th:each="song: ${songs}">
+    <li>Name Of Song: <span th:text="${song.title}"></span></li>
+    <li>Number: <span th:text="${song.trackNumber}"></span></li>
+    <li>Length: <span th:text="${song.length}"></span> </li>
+</ul>
+
+<form action="/addSong" th:object="${album}" >
+    <fieldset>
+        <legend>Add Song</legend>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="count">Track Number:</label>
+        <input type="text" id="count" name="count"><br><br>
+        <label for="sec">Length:</label>
+        <input type="text" id="sec" name="sec"><br><br>
+
+        <input type="hidden" name="id" th:value=${album.id} />
+       <input type="submit" value="Add"  id="id" name="id">
+
+    </fieldset>
+</form>
+
+<button type="button" th:onclick="|window.location.href='/albums'|">Albums</button>
+
+
+
+<footer>&copy; Victoria Fares 2021 </footer>
+</body>
+
+
+</html>

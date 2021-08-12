@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Songs</h1>
+
+<div>
+<ul th:each="song : ${songs}" id="songCss">
+    <li>Name Of Song: <span th:text="${song.title}"></span></li>
+    <li>Number: <span th:text="${song.trackNumber}"></span></li>
+    <li>Length: <span th:text="${song.length}"></span> </li>
+</ul>
+</div>
+<!--<form action="/addSong">-->
+<!--    <fieldset>-->
+<!--        <legend>Add Song</legend>-->
+<!--        <label for="title">Title:</label>-->
+<!--        <input type="text" id="title" name="title"><br><br>-->
+<!--        <label for="count">Track Number:</label>-->
+<!--        <input type="text" id="count" name="count"><br><br>-->
+<!--        <label for="sec">Length:</label>-->
+<!--        <input type="text" id="sec" name="sec"><br><br>-->
+<!--        <label for="albumx">Add to album:</label>-->
+<!--        <input type="text" id="albumx" name="albumx"><br><br>-->
+<!--        <input type="submit" value="Add" >-->
+<!--    </fieldset>-->
+<!--</form>-->
+<button type="button" th:onclick="|window.location.href='/albums'|">Albums</button>
+
+<footer>&copy; Victoria Fares 2021 </footer>
+</body>
+
+
+</html>

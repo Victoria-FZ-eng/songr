@@ -17,8 +17,24 @@ public class Album {
     @OneToMany(mappedBy = "title")
     private List<Song> songs;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public Album(){
 
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     public Album(String title, String artist, String songCount, String length, String imageUrl) {
