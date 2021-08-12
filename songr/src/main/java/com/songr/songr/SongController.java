@@ -3,10 +3,7 @@ package com.songr.songr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.*;
@@ -18,7 +15,7 @@ public class SongController {
     AlbumRepository albumRepository;
 
     @Autowired
-    SongrApplication songRepository;
+    SongRepository songRepository;
 
     @GetMapping("/")
     public String home(Model model){
@@ -53,13 +50,31 @@ public class SongController {
 
     }
 
+
+    @RequestMapping("/songs")
     @GetMapping("/songs")
-    public String getAllSongs(Model model){
-       // Song one = new Song(albumRepository,5.2,3,"album");
-      //  songRepository.add(one);
-       // model.addAttribute("songs", songRepository.findAll());
-        return "songs";
+    public String getSongs(Model model){
+
+        model.addAttribute("songs", songRepository.findAll());
+        return "songs.html";
     }
 
+    @RequestMapping("/songs/{album.id}")
+    @GetMapping("/songs/{album.id}")
+    public String getSongsAlbumSpecified(@RequestParam(value = "id")Integer id, Model model){
+
+        model.addAttribute("songs", albumRepository.findById(id));
+        return "songs.html";
+    }
+
+    @RequestMapping("/addSong")
+    @PostMapping("/addSong")
+    public RedirectView addSong(String title, int count, double sec, String albumx){
+        Album album = (Album) albumRepository.findByTitle(albumx);
+        Song song = new Song(title,sec,count, album);
+        songRepository.save(song);
+        return new  RedirectView("/songs");
+
+    }
 
 }

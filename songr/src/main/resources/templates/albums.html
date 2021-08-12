@@ -31,9 +31,12 @@
         <p>Artist: <span th:text="${album.artist}"></span></p>
         <p>Count: <span th:text="${album.songCount}"></span></p>
         <p>Length: <span th:text="${album.length}"></span> </p>
-        <img th:src="${album.imageUrl}"/>
+        <img th:src="${album.imageUrl}"/><br>
+        <button type="button" th:onclick="|window.location.href='/songs/{album.id}'|">View Album</button>
     </li>
 </ul>
+<button type="button" th:onclick="|window.location.href='/songs'|">All Songs</button>
+
 </body>
 
 <footer>&copy; Victoria Fares 2021 </footer>

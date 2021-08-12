@@ -11,6 +11,7 @@ public class Song {
     private String title;
     private double length;
     private int trackNumber;
+
     @ManyToOne
     private Album album;
 
@@ -25,8 +26,8 @@ public class Song {
     public Song() {
     }
 
-    public Song(Album title, double length, int trackNumber, Album album) {
-        this.album = title;
+    public Song(String title, double length, int trackNumber, Album album) {
+        this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
         this.album = album;
