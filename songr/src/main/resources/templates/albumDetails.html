@@ -16,7 +16,13 @@
 
    </div>
 
-<form action="/addSong" th:object="${album}" value=album.id>
+<!--<div th:each="song : ${songs}">-->
+<!--    <h1>Name Of Song: <span th:text="${song.title}"></span></h1>-->
+<!--    <p>Number: <span th:text="${album.trackNumber}"></span></p>-->
+<!--    <p>Length: <span th:text="${album.length}"></span> </p>-->
+<!--</div>-->
+
+<form action="/addSong" th:object="${album}" >
     <fieldset>
         <legend>Add Song</legend>
         <label for="title">Title:</label>
@@ -25,9 +31,10 @@
         <input type="text" id="count" name="count"><br><br>
         <label for="sec">Length:</label>
         <input type="text" id="sec" name="sec"><br><br>
-<!--      <input type="hidden" name="id" th:value=${album.id} />-->
-<!--       <input type="submit" value="Add"  id="id" name="id">-->
-        <button type="submit" value=album.id  >Add</button>
+
+        <input type="hidden" name="id" th:value=${album.id} />
+       <input type="submit" value="Add"  id="id" name="id">
+
     </fieldset>
 </form>
 

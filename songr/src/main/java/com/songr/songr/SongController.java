@@ -62,22 +62,24 @@ public class SongController {
     @RequestMapping("/oneAlbum/id")
     @GetMapping("/oneAlbum/id")
     public String getSongsAlbumSpecified(@RequestParam(value = "id")Integer id, Model model){
-
-        //Integer i = Integer.parseInt(id);
-        model.addAttribute("album", albumRepository.findById(id).get());
+        System.out.println("again");
+        Album album = albumRepository.findById(id).get();
+        model.addAttribute("album", album);
+       // model.addAttribute("songs", songRepository.findByAlbum(album));
         return "albumDetails.html";
     }
 
     @RequestMapping("/addSong")
     @PostMapping("/addSong")
     public RedirectView addSong(String title, int count, double sec, Integer id){
-        System.out.println(title);
-        System.out.println(count);
-        System.out.println(sec);
-        System.out.println(id);
+//        System.out.println(title);
+//        System.out.println(count);
+//        System.out.println(sec);
+//        System.out.println(id);
         Album album =  albumRepository.findById(id).get();
         Song song = new Song(title,sec,count, album);
         songRepository.save(song);
+        album.getSongs().add(song);
         return new  RedirectView("/oneAlbum/id?id="+album.getId());
 
     }
