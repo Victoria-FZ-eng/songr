@@ -65,7 +65,7 @@ public class SongController {
         System.out.println("again");
         Album album = albumRepository.findById(id).get();
         model.addAttribute("album", album);
-       // model.addAttribute("songs", songRepository.findByAlbum(album));
+        model.addAttribute("songs", songRepository.findByAlbum(album));
         return "albumDetails.html";
     }
 

@@ -8,12 +8,13 @@
 <body>
 <h1>Songs</h1>
 
-<div th:each="song : ${songs}">
-    <h3>Name Of Song: <span th:text="${song.title}"></span></h3>
-    <p>Number: <span th:text="${album.trackNumber}"></span></p>
-    <p>Length: <span th:text="${album.length}"></span> </p>
+<div>
+<ul th:each="song : ${songs}">
+    <li>Name Of Song: <span th:text="${song.title}"></span></li>
+    <li>Number: <span th:text="${song.trackNumber}"></span></li>
+    <li>Length: <span th:text="${song.length}"></span> </li>
+</ul>
 </div>
-
 <!--<form action="/addSong">-->
 <!--    <fieldset>-->
 <!--        <legend>Add Song</legend>-->
